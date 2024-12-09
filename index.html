@@ -32,7 +32,22 @@
         .contact-buttons {
             margin-top: 20px;
         }
+        #thermohash-buttons {
+            display: none;
+        }
     </style>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pbd5bu6r0l");
+
+        function showThermoHash() {
+            const buttons = document.getElementById('thermohash-buttons');
+            buttons.style.display = buttons.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="text-center" id="profile-links">
@@ -41,9 +56,15 @@
         <a href="https://x.com/daviddibenede15" class="btn btn-custom btn-lg" target="_blank">X (Twitter)</a>
         <a href="https://github.com/dibend" class="btn btn-custom btn-lg" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/daviddibenedetto" class="btn btn-custom btn-lg" target="_blank">LinkedIn</a>
+        <a href="https://njweb.solutions" class="btn btn-custom btn-lg" target="_blank">NJWeb.Solutions</a>
         <a href="https://www.njweb.solutions/certs" class="btn btn-custom btn-lg" target="_blank">My Certifications</a>
-        <a href="https://github.com/dibend/thermohash" class="btn btn-custom btn-lg" target="_blank">ThermoHash: Dynamic Miner Power Management</a>
-        <a href="https://github.com/dibend/Thermohash_Version_S9" class="btn btn-custom btn-lg" target="_blank">ThermoHash Version S9: Dynamic Miner Power Management</a>
+        <button class="btn btn-custom btn-lg" onclick="showThermoHash()">Crypto Mining Optimizations</button>
+
+        <!-- ThermoHash Buttons -->
+        <div id="thermohash-buttons">
+            <a href="https://github.com/dibend/thermohash" class="btn btn-custom btn-lg" target="_blank">ThermoHash: Dynamic Miner Power Management</a>
+            <a href="https://github.com/dibend/Thermohash_Version_S9" class="btn btn-custom btn-lg" target="_blank">ThermoHash Version S9: Dynamic Miner Power Management</a>
+        </div>
     </div>
 
     <!-- Contact Buttons -->
