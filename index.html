@@ -45,7 +45,11 @@
 
         function showThermoHash() {
             const buttons = document.getElementById('thermohash-buttons');
-            buttons.style.display = buttons.style.display === 'none' ? 'block' : 'none';
+            if (buttons.style.display === 'none' || buttons.style.display === '') {
+                buttons.style.display = 'block';
+            } else {
+                buttons.style.display = 'none';
+            }
         }
     </script>
 </head>
