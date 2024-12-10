@@ -37,6 +37,7 @@
         .btn-custom span {
             position: relative;
             z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .btn-custom::before {
@@ -48,15 +49,11 @@
             width: 100%;
             background: linear-gradient(to right, #d63384, #6f42c1);
             z-index: 0;
-            transition: left 2s ease;
+            transition: left 1.5s ease;
         }
 
         .btn-custom.animate::before {
             left: 0;
-        }
-
-        .btn-custom span {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .contact-buttons {
@@ -79,27 +76,31 @@
 
         function animateButtons(buttons) {
             buttons.forEach((btn, index) => {
-                setTimeout(() => btn.classList.add('animate'), index * 200); // Stagger animation
+                setTimeout(() => btn.classList.add('animate'), index * 200); // Add animation with delay
             });
         }
 
-        window.onload = function() {
-            const buttons = document.querySelectorAll('.btn-custom');
-            animateButtons(buttons);
-        };
-
         function showThermoHash() {
             const buttonsContainer = document.getElementById('thermohash-buttons');
+
+            // Only animate when showing the buttons
             if (buttonsContainer.style.display === 'none' || buttonsContainer.style.display === '') {
                 buttonsContainer.style.display = 'block';
 
-                // Select the newly visible buttons and animate them
+                // Animate only when the buttons are displayed
                 const newButtons = buttonsContainer.querySelectorAll('.btn-custom');
-                animateButtons(newButtons);
+                setTimeout(() => {
+                    animateButtons(newButtons);
+                }, 50); // Ensure display update happens before animation
             } else {
                 buttonsContainer.style.display = 'none';
             }
         }
+
+        window.onload = function() {
+            const buttons = document.querySelectorAll('.btn-custom:not(#thermohash-buttons .btn-custom)');
+            animateButtons(buttons); // Animate only visible buttons on load
+        };
     </script>
 </head>
 <body>
