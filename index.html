@@ -78,8 +78,8 @@
         })(window, document, "clarity", "script", "pbd5bu6r0l");
 
         function animateButtons(buttons) {
-            buttons.forEach(btn => {
-                setTimeout(() => btn.classList.add('animate'), 100);
+            buttons.forEach((btn, index) => {
+                setTimeout(() => btn.classList.add('animate'), index * 200); // Stagger animation
             });
         }
 
@@ -92,6 +92,8 @@
             const buttonsContainer = document.getElementById('thermohash-buttons');
             if (buttonsContainer.style.display === 'none' || buttonsContainer.style.display === '') {
                 buttonsContainer.style.display = 'block';
+
+                // Select the newly visible buttons and animate them
                 const newButtons = buttonsContainer.querySelectorAll('.btn-custom');
                 animateButtons(newButtons);
             } else {
