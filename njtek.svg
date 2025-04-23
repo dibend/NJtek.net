@@ -1,0 +1,48 @@
+
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural Network -->
+  <circle cx="193" cy="95" r="5" fill="#00FFAA"/><circle cx="110" cy="62" r="5" fill="#00FFAA"/><circle cx="65" cy="88" r="5" fill="#00FFAA"/><circle cx="84" cy="88" r="5" fill="#00FFAA"/><circle cx="186" cy="63" r="5" fill="#00FFAA"/><circle cx="84" cy="89" r="5" fill="#00FFAA"/><circle cx="148" cy="31" r="5" fill="#00FFAA"/><circle cx="51" cy="91" r="5" fill="#00FFAA"/><circle cx="69" cy="38" r="5" fill="#00FFAA"/><circle cx="150" cy="66" r="5" fill="#00FFAA"/>
+  <line x1="193" y1="95" x2="84" y2="89" stroke="#00FFAA" stroke-width="1"/><line x1="110" y1="62" x2="65" y2="88" stroke="#00FFAA" stroke-width="1"/><line x1="65" y1="88" x2="110" y2="62" stroke="#00FFAA" stroke-width="1"/><line x1="84" y1="88" x2="84" y2="89" stroke="#00FFAA" stroke-width="1"/><line x1="84" y1="89" x2="65" y2="88" stroke="#00FFAA" stroke-width="1"/><line x1="148" y1="31" x2="65" y2="88" stroke="#00FFAA" stroke-width="1"/><line x1="51" y1="91" x2="65" y2="88" stroke="#00FFAA" stroke-width="1"/>
+  
+  <!-- Embedded Bitcoin Logo -->
+  <g transform="translate(375,50) scale(0.4)">
+    <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<g transform="translate(0.00630876,-0.00301984)">
+<path fill="#f7931a" d="m63.033,39.744c-4.274,17.143-21.637,27.576-38.782,23.301-17.138-4.274-27.571-21.638-23.295-38.78,4.272-17.145,21.635-27.579,38.775-23.305,17.144,4.274,27.576,21.64,23.302,38.784z"/>
+<path fill="#FFF" d="m46.103,27.444c0.637-4.258-2.605-6.547-7.038-8.074l1.438-5.768-3.511-0.875-1.4,5.616c-0.923-0.23-1.871-0.447-2.813-0.662l1.41-5.653-3.509-0.875-1.439,5.766c-0.764-0.174-1.514-0.346-2.242-0.527l0.004-0.018-4.842-1.209-0.934,3.75s2.605,0.597,2.55,0.634c1.422,0.355,1.679,1.296,1.636,2.042l-1.638,6.571c0.098,0.025,0.225,0.061,0.365,0.117-0.117-0.029-0.242-0.061-0.371-0.092l-2.296,9.205c-0.174,0.432-0.615,1.08-1.609,0.834,0.035,0.051-2.552-0.637-2.552-0.637l-1.743,4.019,4.569,1.139c0.85,0.213,1.683,0.436,2.503,0.646l-1.453,5.834,3.507,0.875,1.439-5.772c0.958,0.26,1.888,0.5,2.798,0.726l-1.434,5.745,3.511,0.875,1.453-5.823c5.987,1.133,10.489,0.676,12.384-4.739,1.527-4.36-0.076-6.875-3.226-8.515,2.294-0.529,4.022-2.038,4.483-5.155zm-8.022,11.249c-1.085,4.36-8.426,2.003-10.806,1.412l1.928-7.729c2.38,0.594,10.012,1.77,8.878,6.317zm1.086-11.312c-0.99,3.966-7.1,1.951-9.082,1.457l1.748-7.01c1.982,0.494,8.365,1.416,7.334,5.553z"/>
+</g>
+
+
+  </g>
+  
+  <!-- Blockchain -->
+  <rect x="350" y="40" width="40" height="20" fill="#F7931A" stroke="#333" stroke-width="1"/><line x1="370" y1="60" x2="370" y2="70" stroke="#333" stroke-width="1"/><rect x="350" y="70" width="40" height="20" fill="#F7931A" stroke="#333" stroke-width="1"/><line x1="370" y1="90" x2="370" y2="100" stroke="#333" stroke-width="1"/><rect x="350" y="100" width="40" height="20" fill="#F7931A" stroke="#333" stroke-width="1"/><line x1="370" y1="120" x2="370" y2="130" stroke="#333" stroke-width="1"/><rect x="350" y="130" width="40" height="20" fill="#F7931A" stroke="#333" stroke-width="1"/><line x1="370" y1="150" x2="370" y2="160" stroke="#333" stroke-width="1"/><rect x="350" y="160" width="40" height="20" fill="#F7931A" stroke="#333" stroke-width="1"/>
+  
+  <!-- Enhanced Server -->
+  
+<!-- Enhanced Mining Rig/Server -->
+<rect x="245" y="190" width="90" height="40" fill="#111111" stroke="#00FFAA" stroke-width="2"/>
+<!-- Vents -->
+<line x1="250" y1="195" x2="330" y2="195" stroke="#333333" stroke-width="1"/>
+<line x1="250" y1="200" x2="330" y2="200" stroke="#333333" stroke-width="1"/>
+<line x1="250" y1="205" x2="330" y2="205" stroke="#333333" stroke-width="1"/>
+<!-- LEDs -->
+<circle cx="255" cy="215" r="2" fill="#00FF00"/>
+<circle cx="265" cy="215" r="2" fill="#FF4500"/>
+<circle cx="275" cy="215" r="2" fill="#FFD700"/>
+<!-- Ports -->
+<rect x="310" y="210" width="20" height="5" fill="#222222" stroke="#00FFAA" stroke-width="0.5"/>
+<rect x="310" y="217" width="20" height="5" fill="#222222" stroke="#00FFAA" stroke-width="0.5"/>
+
+  
+  <!-- Heat Waves -->
+  
+<path d="M260 190 Q265 180, 270 190 T280 190" stroke="#FF4500" fill="none" stroke-width="2"/>
+<path d="M290 190 Q295 180, 300 190 T310 190" stroke="#FF4500" fill="none" stroke-width="2"/>
+
+  
+  <!-- Main Text -->
+  <text x="250" y="270" text-anchor="middle" font-size="40" font-family="Arial" fill="#00FFAA">NJtek.net</text>
+  <text x="250" y="295" text-anchor="middle" font-size="16" font-family="Arial" fill="#333333">Empowering Tech &amp; Innovation</text>
+</svg>
