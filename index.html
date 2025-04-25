@@ -1,11 +1,11 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NJtek.net</title>
-    <!-- Bootstrap CSS -->
+    <title>NJtek.net - AI, Crypto, and IT Solutions</title>
+    <meta name="description" content="NJtek.net offers cutting-edge AI tools, cryptocurrency mining solutions, IT consulting, and investment research software. Explore our open-source projects, hosted services, and expert certifications.">
+    <meta name="keywords" content="AI tools, cryptocurrency mining, FPGA mining, ASIC mining, auto-swap crypto, NJtek, NJWeb Solutions, Heathwater, HostedOp, ThermoHash, localized LLM, investment research, open-source projects, IT consulting">
+    <meta name="author" content="David DiBenedetto">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -18,133 +18,108 @@
             flex-direction: column;
             height: 100vh;
             overflow: auto;
+        }.btn-custom {
+        background: linear-gradient(45deg, #6f42c1, #d63384);
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid #fff;
+        margin: 10px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    .btn-custom span {
+        position: relative;
+        z-index: 1;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .scrollable-container {
+        width: 100%;
+        max-height: 100vh;
+        overflow-y: auto;
+        padding: 20px 10px;
+        background-color: rgba(0,0,0,0.6);
+        border-radius: 15px;
+    }
+
+    h2 {
+        color: gold;
+        text-shadow: 1px 1px 3px whitesmoke;
+        margin-top: 40px;
+    }
+
+    iframe {
+        border: 2px solid #fff;
+        border-radius: 10px;
+    }
+</style>
+<script>
+    function animateButtons(buttons) {
+        buttons.forEach((btn, index) => {
+            setTimeout(() => btn.classList.add('animate'), index * 150);
+        });
+    }
+
+    function toggleThermoHash() {
+        const container = document.getElementById('thermohash-buttons');
+        container.style.display = (container.style.display === 'block') ? 'none' : 'block';
+        if (container.style.display === 'block') {
+            const buttons = container.querySelectorAll('.btn-custom');
+            animateButtons(buttons);
         }
+    }
 
-        .btn-custom {
-            background-color: #6f42c1;
-            color: #fff;
-            font-weight: bold;
-            border: 2px solid #d63384;
-            margin: 10px;
-            overflow: hidden;
-            position: relative;
-        }
+    window.onload = function() {
+        const buttons = document.querySelectorAll('.btn-custom:not(#thermohash-buttons .btn-custom)');
+        animateButtons(buttons);
+    };
+</script>
 
-        .btn-custom:hover {
-            background-color: #d63384;
-            border-color: #6f42c1;
-            color: #fff;
-        }
-
-        .btn-custom span {
-            position: relative;
-            z-index: 1;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .btn-custom::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(to right, #d63384, #6f42c1);
-            z-index: 0;
-            transition: left 1.5s ease;
-        }
-
-        .btn-custom.animate::before {
-            left: 0;
-        }
-
-        .contact-buttons {
-            margin-top: 20px;
-        }
-
-        #thermohash-buttons {
-            display: none;
-        }
-
-        .scrollable-container {
-            width: 100%;
-            max-height: 100vh;
-            overflow-y: auto;
-            padding: 20px 10px;
-        }
-    </style>
-    <script type="text/javascript">
-        function animateButtons(buttons) {
-            buttons.forEach((btn, index) => {
-                setTimeout(() => btn.classList.add('animate'), index * 200); // Add animation with delay
-            });
-        }
-
-        function showThermoHash() {
-            const buttonsContainer = document.getElementById('thermohash-buttons');
-
-            // Only animate when showing the buttons
-            if (buttonsContainer.style.display === 'none' || buttonsContainer.style.display === '') {
-                buttonsContainer.style.display = 'block';
-
-                // Animate only when the buttons are displayed
-                const newButtons = buttonsContainer.querySelectorAll('.btn-custom');
-                setTimeout(() => {
-                    animateButtons(newButtons);
-                }, 50); // Ensure display update happens before animation
-            } else {
-                buttonsContainer.style.display = 'none';
-            }
-        }
-
-        window.onload = function() {
-            const buttons = document.querySelectorAll('.btn-custom:not(#thermohash-buttons .btn-custom)');
-            animateButtons(buttons); // Animate only visible buttons on load
-        };
-    </script>
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "pbd5bu6r0l");
-    </script>
 </head>
 <body>
-    <div class="scrollable-container">
-        <img src="/njtek.svg" style="width:90%;" alt="logo">
-        <div class="text-center" id="profile-links">
-            <!-- Profile Links -->
-            <a href="https://youtube.com/@njtek" class="btn btn-custom btn-lg"><span>NJTek YouTube Channel</span></a>
-            <a href="https://huggingface.co/dibend" class="btn btn-custom btn-lg"><span>AI & Data Sci Apps in Your Browser - My Hugging Face Profile</span></a>
-            <a href="https://x.com/njtekdotnet" class="btn btn-custom btn-lg"><span>My X (Twitter)</span></a>
-            <a href="https://www.linkedin.com/in/daviddibenedetto/" class="btn btn-custom btn-lg"><span>My LinkedIn</span></a>
-            <a href="https://github.com/dibend" class="btn btn-custom btn-lg"><span>Open-Source Projects on GitHub</span></a>
-            <a href="https://njweb.solutions" class="btn btn-custom btn-lg"><span>My Software & IT Business - NJWeb.Solutions</span></a>
-            <a href="https://www.njweb.solutions/certs" class="btn btn-custom btn-lg"><span>My Technical Certifications</span></a>
-            <a href="https://hostedop.com" class="btn btn-custom btn-lg"><span>HostedOp.com: Hosted Bitcoin Mining, Cloud, & A.I. investment.</span></a>
-            <a href="https://heathwater.com" class="btn btn-custom btn-lg"><span>Heathwater Investment Research Software</span></a>
-            <a href="https://blastmining.net" class="btn btn-custom btn-lg"><span>Cryptocurrency Mining Hashrate Rentals</span></a>
-            <a href="https://localized-llm.com" class="btn btn-custom btn-lg"><span>Localized Large Language Model Deployments</span></a>
-            <button class="btn btn-custom btn-lg" onclick="showThermoHash()"><span>Bitcoin Mining Heat Utilization Optimizer Auto Tuning Software</span></button>
+    <div class="scrollable-container text-center">
+        <img src="/njtek.svg" style="width:90%;" alt="NJtek Logo"><a href="https://unmineable.com/?ref=vwwp-obmd" class="btn btn-custom btn-lg" style="background: linear-gradient(45deg, #ff9900, #ff6600); border-color: #cc5200;">
+        <span>Auto-Swap to Your Favorite Crypto ⚡ CPU, GPU, FPGA, & ASIC Friendly - My Referral</span>
+    </a>
 
-            <!-- ThermoHash Buttons -->
-            <div id="thermohash-buttons">
-                <a href="https://github.com/dibend/thermohash" class="btn btn-custom btn-lg"><span>ThermoHash</span></a>
-                <a href="https://github.com/dibend/Thermohash_Version_S9" class="btn btn-custom btn-lg"><span>ThermoHash version S9</span></a>
-            </div>
+    <div id="profile-links">
+        <a href="https://youtube.com/@njtek" class="btn btn-custom btn-lg"><span>NJTek YouTube Channel</span></a>
+        <a href="https://huggingface.co/dibend" class="btn btn-custom btn-lg"><span>AI & Data Sci Apps - Hugging Face Profile</span></a>
+        <a href="https://x.com/njtekdotnet" class="btn btn-custom btn-lg"><span>My X (Twitter)</span></a>
+        <a href="https://www.linkedin.com/in/daviddibenedetto/" class="btn btn-custom btn-lg"><span>My LinkedIn</span></a>
+        <a href="https://github.com/dibend" class="btn btn-custom btn-lg"><span>Open-Source Projects - GitHub</span></a>
+        <a href="https://njweb.solutions" class="btn btn-custom btn-lg"><span>Software & IT - NJWeb.Solutions</span></a>
+        <a href="https://www.njweb.solutions/certs" class="btn btn-custom btn-lg"><span>Technical Certifications</span></a>
+        <a href="https://hostedop.com" class="btn btn-custom btn-lg"><span>HostedOp.com: Bitcoin Mining, Cloud, & A.I. Investment</span></a>
+        <a href="https://heathwater.com" class="btn btn-custom btn-lg"><span>Heathwater Investment Research Software</span></a>
+        <a href="https://blastmining.net" class="btn btn-custom btn-lg"><span>Cryptocurrency Mining Hashrate Rentals</span></a>
+        <a href="https://localized-llm.com" class="btn btn-custom btn-lg"><span>Localized LLM Deployments</span></a>
+        <button class="btn btn-custom btn-lg" onclick="toggleThermoHash()"><span>Bitcoin Mining Heat Optimization - ThermoHash</span></button>
+        <div id="thermohash-buttons" style="display:none;">
+            <a href="https://github.com/dibend/thermohash" class="btn btn-custom btn-lg"><span>ThermoHash Main</span></a>
+            <a href="https://github.com/dibend/Thermohash_Version_S9" class="btn btn-custom btn-lg"><span>ThermoHash S9 Version</span></a>
         </div>
-
-        <!-- Contact Buttons -->
-        <div class="contact-buttons">
-            <a href="tel:+19085776850" class="btn btn-custom btn-lg"><span>Call Me Directly</span></a>
-            <a href="https://wa.me/19085776850" class="btn btn-custom btn-lg"><span>Message Me on WhatsApp</span></a>
-            <a href="sms:+19085776850" class="btn btn-custom btn-lg"><span>Send Me a Text Message</span></a>
-        </div>
-        <h2 style="color:gold;text-shadow:.2rem,.2rem,.2rem,whitesmoke;">NJtek Folding@home Team Stats</h2>
-        <iframe src="https://stats.foldingathome.org/team/1066562" height="800" style="width: 95%;border:1px solid #ccc;"></iframe>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="contact-buttons">
+        <a href="tel:+19085776850" class="btn btn-custom btn-lg"><span>Call Me Directly</span></a>
+        <a href="https://wa.me/19085776850" class="btn btn-custom btn-lg"><span>Message Me on WhatsApp</span></a>
+        <a href="sms:+19085776850" class="btn btn-custom btn-lg"><span>Send Me a Text</span></a>
+    </div>
+
+    <h2>NJtek Folding@home Team Stats</h2>
+    <iframe src="https://stats.foldingathome.org/team/1066562" height="800" width="95%"></iframe>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
