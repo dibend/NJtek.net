@@ -1,231 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NJtek.net offers cutting-edge AI tools, cryptocurrency mining solutions, IT consulting, and investment research software. Explore our open-source projects, hosted services, and expert certifications.">
-    <meta name="keywords" content="AI tools, cryptocurrency mining, FPGA mining, ASIC mining, auto-swap crypto, NJtek, NJWeb Solutions, Heathwater, HostedOp, ThermoHash, localized LLM, investment research, open-source projects, IT consulting">
-    <meta name="author" content="David DiBenedetto">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NJtek.net offers cutting-edge AI tools, cryptocurrency mining solutions, IT consulting, and investment research software." />
+  <meta name="keywords" content="AI tools, cryptocurrency mining, FPGA mining, ASIC mining, auto-swap crypto, NJtek, NJWeb Solutions, Heathwater, HostedOp, ThermoHash, localized LLM, investment research, open-source projects, IT consulting" />
+  <meta name="author" content="David DiBenedetto" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
-    <style>
-        body {
-            background: url('shahadat-rahman-voM1Z9cGPCU-unsplash.jpg') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            height: 100vh;
-            overflow: auto;
-            position: relative;
-        }
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
 
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 0;
-            pointer-events: none;
-        }
+    body {
+      background: url('shahadat-rahman-voM1Z9cGPCU-unsplash.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      position: relative;
+    }
 
-        .scrollable-container {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 900px;
-            max-height: 100vh;
-            overflow-y: auto;
-            padding: 2rem;
-            background-color: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 1rem;
-        }
+    .background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
 
-        .logo-container {
-            display: inline-block;
-            background-color: rgba(245, 245, 245, 0.25);
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 2rem;
-        }
+    .scrollable-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 2rem;
+      background-color: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .btn-custom {
-            background: linear-gradient(45deg, #6f42c1, #d63384);
-            color: #fff;
-            font-weight: bold;
-            border: 2px solid #fff;
-            margin: 10px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
-        }
+    .logo-container {
+      display: inline-block;
+      background-color: rgba(245, 245, 245, 0.25);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 2rem;
+      width: 100%;
+      text-align: center;
+    }
 
-        .btn-custom.animate {
-            animation: slideFadeIn 0.6s ease forwards;
-        }
+    .btn-custom {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      background: linear-gradient(45deg, #6f42c1, #d63384);
+      color: #fff;
+      font-weight: bold;
+      border: 2px solid #fff;
+      margin: 10px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .btn-burn {
-            animation: burnIn 0.8s ease forwards;
-        }
+    .btn-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
 
-        @keyframes burnIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-                box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-                box-shadow: 0 0 20px rgba(255, 87, 34, 0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-                box-shadow: 0 0 5px rgba(255, 87, 34, 0.5);
-            }
-        }
+    h2 {
+      color: gold;
+      text-shadow: 1px 1px 3px whitesmoke;
+      margin-top: 40px;
+      text-align: center;
+    }
 
-        @keyframes slideFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .btn-custom { opacity: 1 !important; transform: none !important; }
-            .btn-custom.animate { animation: none !important; }
-            .btn-burn { animation: none !important; }
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
-        }
-
-        .btn-custom span {
-            position: relative;
-            z-index: 1;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-        }
-
-        #profile-links, .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-            width: 100%;
-        }
-
-        h2 {
-            color: gold;
-            text-shadow: 1px 1px 3px whitesmoke;
-            margin-top: 40px;
-        }
-
-        iframe {
-            border: 2px solid #fff;
-            border-radius: 10px;
-            background-color: rgba(255,255,255,0.9);
-            margin-top: 1rem;
-        }
-    </style>
-    <script>
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        let observer;
-        if (!prefersReducedMotion) {
-            observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-        }
-
-        function animateButtons(buttons) {
-            if (!observer) return;
-            buttons.forEach(btn => observer.observe(btn));
-        }
-
-        function toggleThermoHash() {
-            const container = document.getElementById('thermohash-buttons');
-            const show = container.style.display !== 'block';
-            container.style.display = show ? 'block' : 'none';
-            const buttons = container.querySelectorAll('.btn-custom');
-            if (show && !prefersReducedMotion) {
-                buttons.forEach(btn => {
-                    btn.classList.add('btn-burn');
-                    btn.addEventListener('animationend', () => btn.classList.remove('btn-burn'), { once: true });
-                    observer && observer.observe(btn);
-                });
-            }
-        }
-
-        window.onload = function() {
-            if (!prefersReducedMotion) {
-                const buttons = document.querySelectorAll('.btn-custom');
-                animateButtons(buttons);
-            }
-        };
-    </script>
+    iframe {
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background-color: rgba(255,255,255,0.9);
+      margin-top: 1rem;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <div class="background-overlay"></div>
-    <div class="scrollable-container text-center">
-        <div class="logo-container">
-            <img src="/njtek.svg" style="width:90%;" alt="NJtek Logo">
-        </div>
-        <a href="https://unmineable.com/?ref=vwwp-obmd" class="btn btn-custom btn-lg" style="background: linear-gradient(45deg, #ff9900, #ff6600); border-color: #cc5200;">
-            <span><i class="fa-solid fa-coins me-2"></i>Mine Cryptocurrencies for Passive Income: Auto-Swap to Your Favorite Crypto ⚡ CPU, GPU, FPGA, & ASIC Friendly - My Referral</span>
-        </a>
-
-        <div id="profile-links" class="mt-4">
-            <a href="https://youtube.com/@njtek" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-youtube me-2"></i>NJTek YouTube Channel</span></a>
-            <a href="https://huggingface.co/dibend" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-robot me-2"></i>AI & Data Sci Apps - Hugging Face Profile</span></a>
-            <a href="https://x.com/njtekdotnet" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-x-twitter me-2"></i>My X (Twitter)</span></a>
-            <a href="https://www.linkedin.com/in/daviddibenedetto/" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-linkedin me-2"></i>My LinkedIn</span></a>
-            <a href="https://github.com/dibend" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-github me-2"></i>Open-Source Projects - GitHub</span></a>
-            <a href="https://njweb.solutions" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-laptop-code me-2"></i>Software & IT - NJWeb.Solutions</span></a>
-            <a href="https://www.njweb.solutions/certs" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-certificate me-2"></i>Technical Certifications</span></a>
-            <a href="https://heathwater.com" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-chart-line me-2"></i>Heathwater Investment Research Software</span></a>
-            <a href="https://blastmining.net" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-bolt me-2"></i>Cryptocurrency Mining Hashrate Rentals</span></a>
-            <a href="https://localized-llm.com" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-language me-2"></i>Localized LLM Deployments</span></a>
-            <button class="btn btn-custom btn-lg" onclick="toggleThermoHash()"><span><i class="fa-solid fa-fire me-2"></i>Bitcoin Mining Heat Optimization - ThermoHash</span></button>
-            <div id="thermohash-buttons" style="display:none;">
-                <a href="https://github.com/dibend/thermohash" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-github me-2"></i>ThermoHash Main</span></a>
-                <a href="https://github.com/dibend/Thermohash_Version_S9" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-github me-2"></i>ThermoHash S9 Version</span></a>
-            </div>
-        </div>
-
-        <div class="contact-buttons mt-4">
-            <a href="tel:+19085776850" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-phone me-2"></i>Call Me Directly</span></a>
-            <a href="https://wa.me/19085776850" class="btn btn-custom btn-lg"><span><i class="fa-brands fa-whatsapp me-2"></i>Message Me on WhatsApp</span></a>
-            <a href="sms:+19085776850" class="btn btn-custom btn-lg"><span><i class="fa-solid fa-comment-dots me-2"></i>Send Me a Text</span></a>
-        </div>
-
-        <h2>NJtek Folding@home Team Stats</h2>
-        <iframe src="https://stats.foldingathome.org/team/1066562" height="800" width="95%"></iframe>
+  <div class="background-overlay"></div>
+  <div class="scrollable-container">
+    <div class="logo-container">
+      <img src="/njtek.svg" alt="NJtek Logo" style="max-width: 100%; height: auto;" />
     </div>
+    <!-- Your existing buttons and content here -->
+    <!-- Example button -->
+    <a href="#" class="btn btn-custom">Sample Button</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <h2>NJtek Folding@home Team Stats</h2>
+    <iframe src="https://stats.foldingathome.org/team/1066562" height="800"></iframe>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
