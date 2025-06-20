@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Charizard Holo Card</title>
+  <title>Charizard Gen 1 Holo Card</title>
   <style>
     body {
       margin: 0;
@@ -15,10 +15,11 @@
       overflow: hidden;
       perspective: 1000px;
     }
+
     .card {
       width: 300px;
       height: 450px;
-      background: radial-gradient(circle at center, orange 0%, red 60%, black 100%);
+      background: radial-gradient(circle at center, #ff4500 0%, #ff8c00 60%, #000 100%);
       border-radius: 20px;
       box-shadow: 0 0 50px orange, 0 0 100px red, inset 0 0 30px yellow;
       display: flex;
@@ -28,41 +29,37 @@
       transform-style: preserve-3d;
       overflow: hidden;
     }
-    .charizard {
+
+    svg {
       width: 200px;
       height: 200px;
-      background: radial-gradient(circle at 50% 50%, orange 0%, red 80%);
-      clip-path: polygon(
-        50% 0%,
-        60% 20%,
-        80% 30%,
-        70% 50%,
-        80% 80%,
-        50% 100%,
-        20% 80%,
-        30% 50%,
-        20% 30%,
-        40% 20%
-      );
-      box-shadow: 0 0 50px 20px rgba(255, 69, 0, 0.7);
-      animation: flicker 1s infinite alternate;
+      filter: drop-shadow(0 0 20px orange) drop-shadow(0 0 40px red);
+      animation: flicker 1.5s infinite alternate;
     }
 
     @keyframes flicker {
-      from { box-shadow: 0 0 50px 20px rgba(255, 69, 0, 0.7); }
-      to { box-shadow: 0 0 70px 30px rgba(255, 140, 0, 0.9); }
+      from {
+        filter: drop-shadow(0 0 20px orange) drop-shadow(0 0 40px red);
+      }
+      to {
+        filter: drop-shadow(0 0 40px yellow) drop-shadow(0 0 60px orange);
+      }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="charizard"></div>
+    <!-- Simplified Gen 1 Charizard-like SVG silhouette -->
+    <svg viewBox="0 0 64 64" fill="orange" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 50 L30 20 L40 50 L32 40 L24 50 Z
+               M30 20 Q32 15 35 20 T40 30 Q35 25 30 20 Z" />
+    </svg>
   </div>
 
   <script>
     // Gyro motion
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-      // iOS needs permission
+      // iOS requires permission
       DeviceOrientationEvent.requestPermission()
       .then(response => {
         if (response === 'granted') {
@@ -73,7 +70,7 @@
       })
       .catch(console.error);
     } else {
-      // Other browsers
+      // Android & others
       window.addEventListener('deviceorientation', handleOrientation);
     }
 
